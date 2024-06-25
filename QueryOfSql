@@ -74,8 +74,24 @@ CTE-Common Table Expression is an expression that returns a temporary result set
 
 Nth Higest Salary-select distinct Top(N) salary from employee order by salary desc-->select top(1) salary from (select distinct Top(N) salary from employee order by salary desc)result order by salary
 
+Question => How many type of Table In Sql.
+Answer => Temporary table, Magic Table, Variable Table, Imaginary Table.
 
 
+Variable Table Example => create procedure test
+                          as begin
+                          DECLARE @WeekDays TABLE (Number INT, Day VARCHAR(40), Name VARCHAR(40))  
+                          INSERT INTO @WeekDays
+                          VALUES
+                          (1, 'Mon', 'Monday'),
+                          (2, 'Tue', 'Tuesday'),
+                          (3, 'Wed', 'Wednesday'),
+                          (4, 'Thu', 'Thursday'),
+                          (5, 'Fri', 'Friday'),
+                          (6, 'Sat', 'Saturday'),
+                          (7, 'Sun', 'Sunday')
+                         SELECT * FROM @WeekDays;
+                         end
 
 
 
