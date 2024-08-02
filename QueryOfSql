@@ -96,6 +96,51 @@ Variable Table Example => create procedure test
 
 
 
+1 => Find nth Highest salary without inner Query.
+2 => Find emp count leave in same city
+3 => Find left join but find only does not match right table data.
+4 => Find all duplicate record.
+5 => delete all duplicate record.
+
+
+Question => Find emp count leave in same city
+Answer => select count(course), course from Fee group by course
+
+
+Question => Find nth Highest salary without inner Query.
+Answer =>     select MAX(amount_paid) as aaa from Fee where amount_paid < (select MAX(amount_paid) from Fee)
+             
+			  SELECT * from Fee as t1 where 2 = (select count(*) from Fee as t2 where t1.amount_paid <= t2.amount_paid)
+
+              with cte_first as
+              (
+              select *, ROW_NUMBER() OVER(ORDER BY amount_paid desc) as rank from Fee
+              )
+              select * from cte_first where rank = 2 
+
+Question => Find left join but find only does not match right table data.
+ 
+Answer => select emp_no,emp.name, emp.sal,emp.age from emp left join Student
+          on Student.id = emp.emp_no
+          where Student.id is null
+	
+
+Question => Find all duplicate record.
+
+with cte_1 as
+(
+select *, ROW_NUMBER() OVER(partition by name order by name ) as rank_number from First_duplicate
+)
+select * from cte_1 where rank_number > 1	
+
+		  
+Question => Delete All duplicate record 
+Answer =>  with cte_1 as
+           (
+           select *, ROW_NUMBER() OVER(partition by name order by name ) as rank_number from First_duplicate
+           )
+           delete from cte_1 where rank_number > 1
+		  
 
 
 
