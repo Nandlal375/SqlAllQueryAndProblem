@@ -77,6 +77,8 @@ Nth Higest Salary-select distinct Top(N) salary from employee order by salary de
 Question => How many type of Table In Sql.
 Answer => Temporary table, Magic Table, Variable Table, Imaginary Table.
 
+Variable table => A table variable is a SQL Server data type used to store temporary data which is similar to a temporary table.
+
 
 Variable Table Example => create procedure test
                           as begin
