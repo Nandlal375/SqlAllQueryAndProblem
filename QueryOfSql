@@ -77,6 +77,16 @@ Nth Higest Salary-select distinct Top(N) salary from employee order by salary de
 Question => How many type of Table In Sql.
 Answer => Temporary table, Magic Table, Variable Table, Imaginary Table.
 
+Question => What is the composite key? And why use it.
+Answer -> A composite key is a primary key that consists of two or more columns used together to uniquely identify a row in a table.
+
+Example -> CREATE TABLE OrderDetails (
+            OrderID INT,
+            ProductID INT,
+            Quantity INT,
+            PRIMARY KEY (OrderID, ProductID)
+            );
+
 Variable table => A table variable is a SQL Server data type used to store temporary data which is similar to a temporary table.
 
 
