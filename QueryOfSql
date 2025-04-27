@@ -87,6 +87,10 @@ Example -> CREATE TABLE OrderDetails (
             PRIMARY KEY (OrderID, ProductID)
             );
 
+Question -> what is the candidate key?
+Answer -> A Candidate Key is any column (or set of columns) in a table that can uniquely identify a row.
+
+
 Variable table => A table variable is a SQL Server data type used to store temporary data which is similar to a temporary table.
 
 
